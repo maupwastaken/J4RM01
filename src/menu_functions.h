@@ -1,4 +1,4 @@
-#include <Windows.h>
+#include <windows.h>
 #include <iostream>
 #include <chrono>
 #include <thread>
@@ -7,12 +7,19 @@
 int Home;
 int nav;
 char column;
+
 void menu(int Home, int nav);
+
 void home();
+
 void navigationMenu(int nav);
+
 void item(char column, int row);
+
 void mouseClick();
+
 void rMouseClick();
+
 void mouseDrag(int x1, int y1, int x2, int y2);
 
 namespace menuvars {

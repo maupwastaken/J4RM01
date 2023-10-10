@@ -1,12 +1,16 @@
 #include <iostream>
 #include <Windows.h>
-#include "menu_Functions.h"
+#include "menu_functions.h"
 #include "timer.h"
 
 void getCursorPosition();
+
 void gamePhase1();
+
 void gamePhase2();
+
 void gamePhase3();
+
 void keyPress(char key); // Remove the namespace
 
 Timer timer;
@@ -64,7 +68,7 @@ void gamePhase1() {
     Sleep(1000);
     // Starting by centering cursor for a Full HD Display
     SetCursorPos(960, 540);
-    for (int i = 0; i < 1 ; ++i) {
+    for (int i = 0; i < 1; ++i) {
         // Phase 1: Pioneers and Base Construction
         // Pioneers
         // Select Soldier
@@ -209,7 +213,7 @@ void gamePhase2() {
     Sleep(500);
     mouseClick();
     // Gem Tower
-    menu(1,3);
+    menu(1, 3);
     item('A', 1);
     SetCursorPos(1405, 343);
     Sleep(100);
@@ -256,7 +260,7 @@ void gamePhase3() {
     SetCursorPos(952, 95);
     Sleep(500);
     rMouseClick();
-     // Wait for space to free to build Harbor and move Pioneers
+    // Wait for space to free to build Harbor and move Pioneers
     Sleep(23000);
     // Move Pioneers
     SetCursorPos(964, 215);
