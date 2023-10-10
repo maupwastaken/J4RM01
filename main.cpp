@@ -273,5 +273,4 @@ void gamePhase3() {
     Sleep(200);
     mouseClick();
 
-
 }
