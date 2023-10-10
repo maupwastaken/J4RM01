@@ -272,5 +272,4 @@ void gamePhase3() {
     SetCursorPos(964, 207);
     Sleep(200);
     mouseClick();
-
 }

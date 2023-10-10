@@ -158,6 +158,3 @@ void navigationMenu(int nav) {
     }
 }
 
-
-
-
