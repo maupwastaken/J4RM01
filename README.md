@@ -5,7 +5,7 @@ This is a project to program bots for the Settlers 3 SU Edition (Settlers United
 Bots are written in c++ with the Windows API, and are controlled via simulated mouse and keyboard inputs. The Bots have to be hardcoded into the used Map. 
 
  // Header Files
- The Header Files provided and the program for recording mouse coordinates make the programming of a bot not that much of a painfull process.
+ The Header Files provided and the program for recording mouse coordinates make the programming of a bot not that much of a painfull process.  
 
  1st menu_functions.h: This is a header that has pre recorded mouse Acions to move into diffrent menus and basic controls are saved here  
  2nd items.h: Items.h provides a variety of smaller submenus in the main Interface  
