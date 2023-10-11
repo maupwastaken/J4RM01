@@ -22,7 +22,7 @@ std::string getCurrentDateTime() {
 }
 
 void monitorKeys() {
-    std::string filename = "C:\\Users\\jan-s\\CLionProjects\\CoordinateProgram\\" + getCurrentDateTime() + ".txt";
+    std::string filename = "C:\\Users\\colin\\CLionProjects\\untitled2\\" + getCurrentDateTime() + ".txt";
     std::ofstream outputFile(filename, std::ios::app);
     auto lastWriteTime = std::chrono::high_resolution_clock::now();
     bool shiftPressed = false;
