@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include "menu_functions.h"
 #include "timer.h"
+#include "items.h"
 
 void getCursorPosition();
 
@@ -64,7 +65,6 @@ void keyPress(char key) {
 }
 
 void gamePhase1() {
-
     Sleep(1000);
     // Starting by centering cursor for a Full HD Display
     SetCursorPos(960, 540);
@@ -86,14 +86,14 @@ void gamePhase1() {
         rMouseClick();
         // Original Map
         keyPress('H');
+        // Add Pioneers
         menu(3, 2);
         SetCursorPos(187, 550);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         Sleep(500);
-        SetCursorPos(116, 542);
-        Sleep(200); // Changed from Sleep(100)
-        mouseClick();
+        // Select Pioneers
+        globe();
         // Change Map
         Sleep(500);
         SetCursorPos(137, 31);
@@ -104,14 +104,18 @@ void gamePhase1() {
         SetCursorPos(112, 643);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
+        // First Point
         SetCursorPos(994, 780);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
+        // Second Point
         SetCursorPos(1410, 353);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         mouseClick();
+        // Original Map
         keyPress('H');
+        // Building
         Sleep(5000);
         // Small House 1
         menu(1, 4);
@@ -197,7 +201,6 @@ void gamePhase1() {
         SetCursorPos(1293, 397);
         Sleep(200);
         mouseClick();
-
     }
 
     while (!timer.isElapsed(180)) {
@@ -219,14 +222,14 @@ void gamePhase2() {
     Sleep(100);
     mouseClick();
     // Send Pioneers above mountain
+    // Change Map
     SetCursorPos(141, 25);
     Sleep(500);
     mouseClick();
     Sleep(500);
-    menu(3, 2);
-    SetCursorPos(116, 542);
-    Sleep(200); // Changed from Sleep(100)
-    mouseClick();
+    // Select Pioneers
+    globe();
+    // Move Pioneers
     SetCursorPos(1183, 91);
     Sleep(500);
     rMouseClick();
@@ -251,11 +254,7 @@ void gamePhase3() {
     Sleep(200);
     mouseClick();
     // Select Pioneers
-    Sleep(500);
-    menu(3, 2);
-    SetCursorPos(116, 542);
-    Sleep(200); // Changed from Sleep(100)
-    mouseClick();
+    globe();
     // Move Pioneers
     SetCursorPos(952, 95);
     Sleep(500);
@@ -266,14 +265,21 @@ void gamePhase3() {
     SetCursorPos(964, 215);
     Sleep(500);
     rMouseClick();
-    // Wait for space to free to build Harbor
-    Sleep(43000);
-    Sleep(500);
-    // Build Harbor
+    // Wait for space to free to build Shipyard
+    Sleep(47500);
+    // Build Shipyard
     menu(1, 3);
     item('B', 4);
-    Sleep(200);
     SetCursorPos(964, 207);
     Sleep(200);
     mouseClick();
+    // Send Pioneers to clear sea access
+    globe();
+    SetCursorPos(981, 156);
+    Sleep(200);
+    rMouseClick();
+    Sleep(10500);
+    SetCursorPos(983, 381);
+    Sleep(200);
+    rMouseClick();
 }
