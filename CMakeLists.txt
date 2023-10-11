@@ -3,7 +3,7 @@ project(J4Rm01)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(J4Rm01 src/main.cpp
-        src/timer.h
-        src/items.h
-        Amazons/src/main.cpp)
+add_executable(J4Rm01 src/Egypts/main.cpp
+        src/Egypts/timer.h
+        src/Egypts/items.h
+        src/Amazons/main.cpp)
