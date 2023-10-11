@@ -18,4 +18,4 @@ Programing has to be done by preforming mouse actions for buildings and navigati
 I am currently working on a program which records user Cursor Locations and saves it so it can be copied and doesn't have to be hand or keyboard written
 
 // Available Maps  
-The latest project is a 90PT Game for the M-768-6-Metzel_v2 (HG) for the egypt nation
+The latest project is a 90PT Game for the M-768-6-Metzel_v2 (HG) for the egypt nation - Uncompleted!
