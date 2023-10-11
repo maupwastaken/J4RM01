@@ -66,5 +66,3 @@ void gamePhase1() {
 
     }
 }
-
-

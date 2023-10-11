@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Windows.h>
+#include <windows.h>
 #include "menu_functions.h"
 #include "timer.h"
 #include "items.h"
@@ -283,4 +283,3 @@ void gamePhase3() {
     Sleep(200);
     rMouseClick();
 }
-
