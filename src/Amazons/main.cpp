@@ -1,8 +1,8 @@
 #include <iostream>
 #include <windows.h>
-#include "menu_functions.h"
-#include "timer.h"
-#include "items.h"
+#include "../globalHeaders/menu_functions.h"
+#include "../globalHeaders/timer.h"
+#include "../globalHeaders/items.h"
 
 void getCursorPosition();
 
