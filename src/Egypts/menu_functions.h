@@ -22,8 +22,10 @@ void rMouseClick();
 
 void mouseDrag(int x1, int y1, int x2, int y2);
 
+void place();
+
 namespace menuvars {
-    int xHome1 = 35;
+
     int xHome2 = 107;
     int xHome3 = 177;
     int yHome = 252;
@@ -103,9 +105,10 @@ void item(char column, int row) {
     mouseClick();
 }
 
-void menu(int Home, int nav) {
-    switch (Home) {
+void menu(int home, int nav) {
+    switch (home) {
         case 1: {
+            menuvars::currentMenu = {home, nav};
             SetCursorPos(menuvars::xHome1, menuvars::yHome);
             Sleep(250);
             mouseClick();
@@ -165,3 +168,6 @@ void navigationMenu(int nav) {
     }
 }
 
+void place() {
+
+}

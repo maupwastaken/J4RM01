@@ -14,6 +14,9 @@ void gamePhase3();
 
 void keyPress(char key); // Remove the namespace
 
+void setCursorPositionWithErrorHandling(int x, int y);
+
+
 Timer timer;
 
 namespace cursor {
@@ -29,6 +32,8 @@ int main() {
     // gamePhase1(); // Uncomment when you want to use it
     return 0;
 }
+
+
 
 void getCursorPosition() {
     POINT cursorPos;
@@ -67,7 +72,7 @@ void keyPress(char key) {
 void gamePhase1() {
     Sleep(1000);
     // Starting by centering cursor for a Full HD Display
-    SetCursorPos(960, 540);
+    setCursorPositionWithErrorHandling(960, 540);
     for (int i = 0; i < 1; ++i) {
         // Phase 1: Pioneers and Base Construction
         // Pioneers
@@ -76,19 +81,19 @@ void gamePhase1() {
         Sleep(500);
         mouseClick();
         // Change Map
-        SetCursorPos(137, 31);
+        setCursorPositionWithErrorHandling(137, 31);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         Sleep(200);
         // Send Soldier
-        SetCursorPos(1410, 353);
+        setCursorPositionWithErrorHandling(1410, 353);
         Sleep(500);
         rMouseClick();
         // Original Map
         keyPress('H');
         // Add Pioneers
         menu(3, 2);
-        SetCursorPos(187, 550);
+        setCursorPositionWithErrorHandling(187, 550);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         Sleep(500);
@@ -96,20 +101,20 @@ void gamePhase1() {
         globe();
         // Change Map
         Sleep(500);
-        SetCursorPos(137, 31);
+        setCursorPositionWithErrorHandling(137, 31);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Set Pioneer Street
         Sleep(500);
-        SetCursorPos(112, 643);
+        setCursorPositionWithErrorHandling(112, 643);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // First Point
-        SetCursorPos(994, 780);
+        setCursorPositionWithErrorHandling(994, 780);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Second Point
-        SetCursorPos(1410, 353);
+        setCursorPositionWithErrorHandling(1410, 353);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         mouseClick();
@@ -120,85 +125,85 @@ void gamePhase1() {
         // Small House 1
         menu(1, 4);
         item('A', 1);
-        SetCursorPos(954, 448);
+        setCursorPositionWithErrorHandling(954, 448);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Small House 2
         item('A', 1);
-        SetCursorPos(876, 381);
+        setCursorPositionWithErrorHandling(876, 381);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Medium House 1
         item('B', 1);
-        SetCursorPos(1179, 450);
+        setCursorPositionWithErrorHandling(1179, 450);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Medium House 2
         item('B', 1);
-        SetCursorPos(1065, 395);
+        setCursorPositionWithErrorHandling(1065, 395);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Medium House 3
         item('B', 1);
-        SetCursorPos(979, 262);
+        setCursorPositionWithErrorHandling(979, 262);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // First Smelter
         Sleep(500);
         menu(1, 1);
         item('B', 3);
-        SetCursorPos(1196, 593);
+        setCursorPositionWithErrorHandling(1196, 593);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Second Smelter
         Sleep(500);
         item('B', 3);
-        SetCursorPos(1324, 541);
+        setCursorPositionWithErrorHandling(1324, 541);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Third Smelter
         Sleep(500);
         item('B', 3);
-        SetCursorPos(1453, 495);
+        setCursorPositionWithErrorHandling(1453, 495);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // First Tower
         Sleep(500);
         menu(1, 3);
         item('A', 1);
-        SetCursorPos(586, 522);
+        setCursorPositionWithErrorHandling(586, 522);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // First Toolsmith
         Sleep(500);
         menu(1, 1);
         item('B', 5);
-        SetCursorPos(1204, 713);
+        setCursorPositionWithErrorHandling(1204, 713);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Second Toolsmith
         menu(1, 1);
         item('B', 5);
-        SetCursorPos(1332, 657);
+        setCursorPositionWithErrorHandling(1332, 657);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Second Tower
         Sleep(500);
         menu(1, 3);
         item('A', 1);
-        SetCursorPos(1477, 604);
+        setCursorPositionWithErrorHandling(1477, 604);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         // Third Tower
         item('A', 1);
-        SetCursorPos(778, 279);
+        setCursorPositionWithErrorHandling(778, 279);
         Sleep(200); // Changed from Sleep(100)
         mouseClick();
         Sleep(10000);
         // First Big House
         menu(1, 4);
         item('A', 2);
-        SetCursorPos(1293, 397);
+        setCursorPositionWithErrorHandling(1293, 397);
         Sleep(200);
         mouseClick();
     }
@@ -212,25 +217,25 @@ void gamePhase1() {
 void gamePhase2() {
     // Change Map View
     Sleep(500);
-    SetCursorPos(137, 31);
+    setCursorPositionWithErrorHandling(137, 31);
     Sleep(500);
     mouseClick();
     // Gem Tower
     menu(1, 3);
     item('A', 1);
-    SetCursorPos(1405, 343);
+    setCursorPositionWithErrorHandling(1405, 343);
     Sleep(100);
     mouseClick();
     // Send Pioneers above mountain
     // Change Map
-    SetCursorPos(141, 25);
+    setCursorPositionWithErrorHandling(141, 25);
     Sleep(500);
     mouseClick();
     Sleep(500);
     // Select Pioneers
     globe();
     // Move Pioneers
-    SetCursorPos(1183, 91);
+    setCursorPositionWithErrorHandling(1183, 91);
     Sleep(500);
     rMouseClick();
     Sleep(200);
@@ -243,26 +248,26 @@ void gamePhase2() {
 
 void gamePhase3() {
     // Change Map
-    SetCursorPos(142, 22);
+    setCursorPositionWithErrorHandling(142, 22);
     Sleep(500);
     mouseClick();
     Sleep(500);
     // Build Harbor
     menu(1, 4);
     item('B', 3);
-    SetCursorPos(1109, 197);
+    setCursorPositionWithErrorHandling(1109, 197);
     Sleep(200);
     mouseClick();
     // Select Pioneers
     globe();
     // Move Pioneers
-    SetCursorPos(952, 95);
+    setCursorPositionWithErrorHandling(952, 95);
     Sleep(500);
     rMouseClick();
     // Wait for space to free to build Harbor and move Pioneers
     Sleep(23000);
     // Move Pioneers
-    SetCursorPos(964, 215);
+    setCursorPositionWithErrorHandling(964, 215);
     Sleep(500);
     rMouseClick();
     // Wait for space to free to build Shipyard
@@ -270,16 +275,27 @@ void gamePhase3() {
     // Build Shipyard
     menu(1, 3);
     item('B', 4);
-    SetCursorPos(964, 207);
+    setCursorPositionWithErrorHandling(964, 207);
     Sleep(200);
     mouseClick();
     // Send Pioneers to clear sea access
     globe();
-    SetCursorPos(981, 156);
+    setCursorPositionWithErrorHandling(981, 156);
     Sleep(200);
     rMouseClick();
     Sleep(10500);
-    SetCursorPos(983, 381);
+    setCursorPositionWithErrorHandling(983, 381);
     Sleep(200);
     rMouseClick();
+}
+
+void setCursorPositionWithErrorHandling(int x, int y) {
+    BOOL returnValue = SetCursorPos(x, y);
+
+    printf("INFO: setting cursor to %d, %d -> %d\n", x, y, returnValue);
+
+    if (returnValue) {
+        unsigned char errorCode = GetLastError();
+        printf("ERROR: setting cursor to %d, %d failed with %d\n", x, y, errorCode);
+    }
 }
