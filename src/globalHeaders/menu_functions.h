@@ -45,6 +45,17 @@ namespace menuvars {
     int B = 159;
 }
 
+void setCursorPositionWithErrorHandling(int x, int y) {
+    BOOL returnValue = SetCursorPos(x, y);
+
+    printf("INFO: setting cursor to %d, %d -> %d\n", x, y, returnValue);
+
+    if (returnValue) {
+        unsigned char errorCode = GetLastError();
+        printf("ERROR: setting cursor to %d, %d failed with %d\n", x, y, errorCode);
+    }
+}
+
 void mouseClick() {
     mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);

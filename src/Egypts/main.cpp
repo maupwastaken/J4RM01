@@ -12,7 +12,7 @@ void gamePhase2();
 
 void gamePhase3();
 
-void keyPress(char key); // Remove the namespace
+void keyPress(char key); // Remhove the namespace
 
 void setCursorPositionWithErrorHandling(int x, int y);
 
@@ -287,15 +287,4 @@ void gamePhase3() {
     setCursorPositionWithErrorHandling(983, 381);
     Sleep(200);
     rMouseClick();
-}
-
-void setCursorPositionWithErrorHandling(int x, int y) {
-    BOOL returnValue = SetCursorPos(x, y);
-
-    printf("INFO: setting cursor to %d, %d -> %d\n", x, y, returnValue);
-
-    if (returnValue) {
-        unsigned char errorCode = GetLastError();
-        printf("ERROR: setting cursor to %d, %d failed with %d\n", x, y, errorCode);
-    }
 }

@@ -24,22 +24,6 @@ int main() {
     return 0;
 }
 
-void getCursorPosition() {
-    POINT cursorPos;
-
-    while (true) {
-        if (GetCursorPos(&cursorPos)) {
-            int x = cursorPos.x;
-            int y = cursorPos.y;
-
-            std::cout << "Current mouse cursor position: X = " << x << ", Y = " << y << std::endl;
-            Sleep(500);
-        } else {
-            std::cerr << "Failed to get cursor position." << std::endl;
-        }
-    }
-}
-
 // Function definition
 void keyPress(char key) {
     INPUT input;
@@ -61,10 +45,10 @@ void keyPress(char key) {
 void gamePhase1() {
     Sleep(1000);
     // Starting by centering cursor for a Full HD Display
-    SetCursorPos(960, 540);
+    setCursorPositionWithErrorHandling(960, 540);
     for (int i = 0; i < 1; ++i) {
         menu(3, 2);
-        SetCursorPos(187, 550);
+        setCursorPositionWithErrorHandling(187, 550);
         Sleep(200);
         mouseClick();
         Sleep(200);
@@ -85,7 +69,7 @@ void gamePhase1() {
 
         // Select Pioneers
         globe();
-        SetCursorPos(972, 572);
+        setCursorPositionWithErrorHandling(972, 572);
         rMouseClick();
         Sleep(200);
         mouseClick();
@@ -96,27 +80,27 @@ void gamePhase1() {
         // Small House 1
         menu(1, 4);
         item('A', 1);
-        SetCursorPos(1193, 470);
+        setCursorPositionWithErrorHandling(1193, 470);
         Sleep(200);
         mouseClick();
         Sleep(500);
 
         // Small House 2
         item('A', 1);
-        SetCursorPos(985, 433);
+        setCursorPositionWithErrorHandling(985, 433);
         Sleep(200);
         mouseClick();
         Sleep(500);
 
         // Small House 3
         item('A', 1);
-        SetCursorPos(1114, 399);
+        setCursorPositionWithErrorHandling(1114, 399);
         Sleep(200);
         mouseClick();
 
         //Turn Pioneers Into Settlers
         menu(3,2);
-        SetCursorPos(185, 621);
+        setCursorPositionWithErrorHandling(185, 621);
         Sleep(200);
         mouseClick();
         Sleep(200);
@@ -140,7 +124,7 @@ void gamePhase1() {
         menu(1, 4);
         item('B', 1);
         Sleep(500);
-        SetCursorPos(1317, 421);
+        setCursorPositionWithErrorHandling(1317, 421);
         Sleep(200);
         mouseClick();
 
@@ -163,10 +147,10 @@ void gamePhase1() {
 
         // Making Pioneers For Towers
         menu(3, 2);
-        SetCursorPos(187, 550);
+        setCursorPositionWithErrorHandling(187, 550);
         Sleep(200);
         mouseClick();
-        SetCursorPos(546, 553);
+        setCursorPositionWithErrorHandling(546, 553);
         Sleep(500);
         rMouseClick();
         Sleep(200);
@@ -174,10 +158,10 @@ void gamePhase1() {
         Sleep(500);
 
         menu(3, 2);
-        SetCursorPos(187, 550);
+        setCursorPositionWithErrorHandling(187, 550);
         Sleep(200);
         mouseClick();
-        SetCursorPos(813, 230);
+        setCursorPositionWithErrorHandling(813, 230);
         Sleep(500);
         rMouseClick();
         Sleep(200);
@@ -189,7 +173,7 @@ void gamePhase1() {
         menu(1, 4);
         item('B', 1);
         Sleep(500);
-        SetCursorPos(1244, 324);
+        setCursorPositionWithErrorHandling(1244, 324);
         Sleep(200);
         mouseClick();
 
@@ -197,17 +181,17 @@ void gamePhase1() {
         Sleep(10000);
         menu(1, 3);
         item('A', 1);
-        SetCursorPos(562, 554); //Tower Between Forest And Stone
+        setCursorPositionWithErrorHandling(562, 554); //Tower Between Forest And Stone
         Sleep(200);
         mouseClick();
         Sleep(3000);
         item('A', 1);
-        SetCursorPos(830, 238); //Tower Towards Forest
+        setCursorPositionWithErrorHandling(830, 238); //Tower Towards Forest
         Sleep(200);
         mouseClick();
         Sleep(200);
         item('A', 1);
-        SetCursorPos(1510, 572); //Tower Towards Mountain
+        setCursorPositionWithErrorHandling(1510, 572); //Tower Towards Mountain
         Sleep(200);
         mouseClick();
 
@@ -218,7 +202,7 @@ void gamePhase1() {
         Sleep(3500);
         menu(1, 4);
         item('A', 2);
-        SetCursorPos(1058, 350);
+        setCursorPositionWithErrorHandling(1058, 350);
         Sleep(200);
         mouseClick();
 
