@@ -8,6 +8,7 @@ int Home;
 int nav;
 char column;
 
+void mouseScroll(int scrolls);
 void menu(int Home, int nav);
 
 void home();
@@ -60,6 +61,19 @@ void mouseDrag(int x1, int y1, int x2, int y2) {
     Sleep(1000);
     SetCursorPos(x2, y2);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+}
+
+void SimulateMouseWheel(int scrollAmount) {
+    INPUT input;
+    input.type = INPUT_MOUSE;
+    input.mi.dx = 0;
+    input.mi.dy = 0;
+    input.mi.mouseData = scrollAmount;  // Use the provided scroll amount
+    input.mi.dwFlags = MOUSEEVENTF_WHEEL;
+    input.mi.time = 0;
+    input.mi.dwExtraInfo = 0;
+
+    SendInput(1, &input, sizeof(INPUT));
 }
 
 void item(char column, int row) {
