@@ -167,9 +167,40 @@ void gamePhase1() {
         Sleep(200);
         mouseClick();
 
+        menu(3, 2);
+        setCursorPositionWithErrorHandling(187, 550);
+        Sleep(200);
+        mouseClick();
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        keybd_event(VK_LEFT,0 ,0 ,0);
+        Sleep(100);
+        setCursorPositionWithErrorHandling(527, 407);
+        Sleep(500);
+        rMouseClick();
+        Sleep(200);
+        mouseClick();
+
 
         //Building Medium House 2
-        Sleep(15000); //Other Buildings Need Time To Finish
+        Sleep(10000); //Other Buildings Need Time To Finish
+        keyPress('H');
         menu(1, 4);
         item('B', 1);
         Sleep(500);
@@ -208,7 +239,7 @@ void gamePhase1() {
 
     }
 
-    while (!timer.isElapsed(137)) {
+    while (!timer.isElapsed(180)) {
 
     }
     gamePhase2();
