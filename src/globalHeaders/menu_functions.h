@@ -23,6 +23,8 @@ void rMouseClick();
 
 void mouseDrag(int x1, int y1, int x2, int y2);
 
+void pressKey(int key, int amount, int delay);
+
 void place();
 
 namespace menuvars {
@@ -56,6 +58,17 @@ void setCursorPositionWithErrorHandling(int x, int y) {
     }
 }
 
+#include <windows.h>
+
+void pressKey(int key, int amount, int delay = 200) {
+    for (int i = 1; i < amount; i++) {
+        keybd_event(key, 0, 0, 0);  // Key press
+        keybd_event(key, 0, KEYEVENTF_KEYUP, 0);  // Key release
+        Sleep(delay);
+    }
+}
+
+
 void mouseClick() {
     mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
@@ -67,12 +80,14 @@ void rMouseClick() {
 }
 
 void mouseDrag(int x1, int y1, int x2, int y2) {
-    SetCursorPos(x1, y1);
+    SetCursorPos(x1, y2);
     mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
-    Sleep(1000);
+    Sleep(200);
     SetCursorPos(x2, y2);
+    Sleep(200);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
 }
+
 
 void SimulateMouseWheel(int scrollAmount) {
     INPUT input;

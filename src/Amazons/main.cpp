@@ -8,8 +8,6 @@ void gamePhase1();
 void gamePhase2();
 void gamePhase3();
 
-void keyPress(char key); // Remove the namespace
-
 Timer timer;
 
 namespace cursor {
@@ -22,24 +20,6 @@ int main() {
     timer.start();
     gamePhase1();
     return 0;
-}
-
-// Function definition
-void keyPress(char key) {
-    INPUT input;
-    input.type = INPUT_KEYBOARD;
-    input.ki.wScan = 0;
-    input.ki.time = 0;
-    input.ki.dwExtraInfo = 0;
-
-    // Press the specified key
-    input.ki.wVk = key;
-    input.ki.dwFlags = 0; // 0 for key press
-    SendInput(1, &input, sizeof(INPUT));
-
-    // Release the specified key
-    input.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
-    SendInput(1, &input, sizeof(INPUT));
 }
 
 void gamePhase1() {
@@ -171,36 +151,17 @@ void gamePhase1() {
         setCursorPositionWithErrorHandling(187, 550);
         Sleep(200);
         mouseClick();
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
-        keybd_event(VK_LEFT,0 ,0 ,0);
-        Sleep(100);
+        pressKey(VK_LEFT, 10, 200);
         setCursorPositionWithErrorHandling(527, 407);
         Sleep(500);
         rMouseClick();
         Sleep(200);
         mouseClick();
 
-
         //Building Medium House 2
-        Sleep(10000); //Other Buildings Need Time To Finish
-        keyPress('H');
+        Sleep(8000); //Other Buildings Need Time To Finish
+        pressKey('H', 1, 0);
+        Sleep(100);
         menu(1, 4);
         item('B', 1);
         Sleep(500);
@@ -212,12 +173,12 @@ void gamePhase1() {
         Sleep(10000);
         menu(1, 3);
         item('A', 1);
-        setCursorPositionWithErrorHandling(562, 554); //Tower Between Forest And Stone
+        setCursorPositionWithErrorHandling(547, 542); //Tower Between Forest And Stone
         Sleep(200);
         mouseClick();
         Sleep(3000);
         item('A', 1);
-        setCursorPositionWithErrorHandling(830, 238); //Tower Towards Forest
+        setCursorPositionWithErrorHandling(816, 218); //Tower Towards Forest
         Sleep(200);
         mouseClick();
         Sleep(200);
@@ -226,8 +187,10 @@ void gamePhase1() {
         Sleep(200);
         mouseClick();
 
-        //Sending Pioneers For Tower-Street
-
+        // Selecting Pioneers For Tower-Street
+        pressKey(VK_LEFT, 10, 200);
+        mouseDrag(445, 481, 576, 608);
+        pioneerStreet();
 
         //Building Big House 1
         Sleep(3500);
@@ -239,10 +202,6 @@ void gamePhase1() {
 
     }
 
-    while (!timer.isElapsed(180)) {
-
-    }
-    gamePhase2();
 };
 
 void gamePhase2(){
