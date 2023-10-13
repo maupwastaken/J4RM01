@@ -22,7 +22,7 @@ Bots are written in c++ with the Windows API, and are controlled via simulated m
 
 // Recording  
 I am currently working on a program which records user Cursor Locations and saves it so it can be copied and doesn't have to be hand or keyboard written  
-- Done -
+- Done
 
 // Available Maps  
 The latest project is a 90PT Game for the M-768-6-Metzel_v2 (HG) for the egypt nation - Uncompleted!  
